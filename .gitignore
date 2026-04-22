@@ -1,0 +1,7 @@
+# Ignorar ejecutables compilados
+*.exe
+*.out
+*.app
+
+# Ignorar carpeta de construcción de CMake
+build/
