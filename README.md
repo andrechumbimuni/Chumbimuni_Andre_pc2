@@ -11,15 +11,15 @@
   https://github.com/kapumota/CC-232/blob/main/Practicas/Practica2_CC232/Problemas-Evaluacion2.csv
 
 ### Tema principal
-- Semana: 2 Arreglos dinamicos y analisis amortizado
+- Semana: 3 (Listas enlazadas, pilas, colas y deques)
 - Estructura o técnica principal:
 
 ### Resumen de la solución
 Explica brevemente la idea principal de la solución.
 
 ### Complejidad
-- Tiempo:
-- Espacio:
+- Tiempo:O(1)
+- Espacio:O(1)
 
 ### Invariante o idea clave
 Describe el invariante o propiedad que se mantiene.
@@ -38,7 +38,7 @@ cmake --build build
 
 ### Ejecución
 ```bash
-./build/tu_programa
+./build/
 ```
 
 ### Casos de prueba
