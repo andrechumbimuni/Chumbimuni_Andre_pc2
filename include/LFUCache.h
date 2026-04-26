@@ -7,39 +7,35 @@
 
 // cada bloque guarda información
 struct Node {
-    int key;
-    int value;
-    int freq; // cuántas veces se ha accedido a este nodo (get o put)
+    int llave;
+    int valor;
+    int frecuencia; // cuántas veces se ha accedido a este nodo (get o put)
 };
 
 class LFUCache {
 private:
-    int capacity;
-    int current_size;
-    int min_freq;     // Nos dice cuál es la frecuencia más baja actual para borrar rápido
+    int capacidad;
+    int tamaño_actual;
+    int frecuencia_minima;     // Nos dice cuál es la frecuencia más baja actual para borrar rápido
 
-    // MAPA 1: key -> Puntero/Iterador al Nodo
+    // MAPA 1: llave -> Puntero/Iterador al Nodo
     // Sirve para responder al instante: "¿Existe esta llave? ¿Dónde está exactamente?"
-    std::unordered_map<int, std::list<Node>::iterator> key_table;
+    std::unordered_map<int, std::list<Node>::iterator> tabla_clave;
 
     // MAPA 2: frecuencia -> Lista Doblemente Enlazada de nodos con esa frecuencia
     // Usamos lista doble porque para borrar toma O(1).
-    std::unordered_map<int, std::list<Node>> freq_table;
+    std::unordered_map<int, std::list<Node>> tabla_frecuencia;
 
 public:
     // Constructor
-    LFUCache(int cap) {
-        capacity = cap;
-        current_size = 0;
-        min_freq = 0;
-    }
+    LFUCache(int cap);
 
     // Métodos
-    int get(int key);
-    void put(int key, int value);
+    int get(int llave);
+    void put(int llave, int valor);
 
     // Método auxiliar
-    void updateFreq(int key); 
+    void Frecuencia_actualizada(int llave); 
 };
 
 #endif

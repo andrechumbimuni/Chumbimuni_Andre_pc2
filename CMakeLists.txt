@@ -8,7 +8,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 include_directories(include)
 
 # ejecutable principal
-add_executable(program_exec src/main.cpp)
-
+add_executable(demo_lfu 
+    demos/demos_LFU_Cache.cpp 
+    src/LFUCache.cpp
+)
 # tests
-add_executable(tests_exec tests/test_main.cpp)
+#add_executable(tests_exec tests/test_main.cpp)
