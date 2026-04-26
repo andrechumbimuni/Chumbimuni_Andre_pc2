@@ -7,7 +7,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 include_directories(include)
 
-# ejecutable principal
+# ejecutable demo
 add_executable(demo_lfu 
     demos/demos_LFU_Cache.cpp 
     src/LFUCache.cpp
