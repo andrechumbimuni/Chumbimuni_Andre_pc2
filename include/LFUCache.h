@@ -16,7 +16,7 @@ class LFUCache {
 private:
     int capacidad;
     int tamaño_actual;
-    int frecuencia_minima;     // Nos dice cuál es la frecuencia más baja actual para borrar rápido
+    int frecuencia_minima;
 
     // MAPA 1: llave -> Puntero/Iterador al Nodo
     // Sirve para responder al instante: "¿Existe esta llave? ¿Dónde está exactamente?"

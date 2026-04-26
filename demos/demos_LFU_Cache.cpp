@@ -1,5 +1,5 @@
 #include <iostream>
-#include "../include/LFUCache.h"
+#include "LFUCache.h"
 
 int main() {
     std::cout << "Iniciando Test Oficial LeetCode 460: LFU Cache (Capacidad: 2)" << std::endl;

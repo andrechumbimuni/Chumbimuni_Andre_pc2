@@ -36,7 +36,7 @@ int LFUCache::get(int llave) {
         return -1; 
     }
     
-    // Si existe, su uso acaba de aumentar, así que actualizamos su frecuencia
+    // Si existe, actualizamos su frecuencia
     Frecuencia_actualizada(llave);
     
     return tabla_clave[llave]->valor;
@@ -55,7 +55,7 @@ void LFUCache::put(int llave, int valor) {
 
     // Caso 2: La llave no existe y el caché está lleno (EVICT).
     if (tabla_clave.size() == capacidad) {
-        // Sacamos al nodo más antiguo (el último) de la lista de menor frecuencia
+        // Sacamos al nodo más antiguo de la lista de menor frecuencia
         auto evict_node = tabla_frecuencia[frecuencia_minima].back();
 
         // Lo borramos de ambas estructuras
@@ -63,8 +63,8 @@ void LFUCache::put(int llave, int valor) {
         tabla_frecuencia[frecuencia_minima].pop_back();
     }
 
-    // Caso 3: Insertar el elemento nuevo con frecuencia inicial de 1
-    frecuencia_minima = 1; // Como es nuevo, la frecuencia mínima debe ser 1
+    // Caso 3: Insertar el elemento nuevo
+    frecuencia_minima = 1; // la frecuencia mínima debe ser 1
     tabla_frecuencia[1].push_front({llave, valor, 1}); // Lo metemos al frente de la lista
-    tabla_clave[llave] = tabla_frecuencia[1].begin();    // Guardamos su ubicación
+    tabla_clave[llave] = tabla_frecuencia[1].begin();    // Guardamos su posición en el mapa
 }
