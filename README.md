@@ -33,6 +33,7 @@ El invariante principal es que todos los elementos con la misma frecuencia se ag
 
 ### Compilación
 Para compilar el proyecto, ejecuta los siguientes comandos desde la raíz del repositorio:
+
 ```bash
 mkdir build
 cd build
